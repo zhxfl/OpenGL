@@ -6,13 +6,15 @@
 #include "../class/Test_3.h"
 #include "../class/Test_4.h"
 #include "../class/Test_5.h"
+#include "../class/Test_6.h"
 
 void doCase1(int argc, char* argv[]);
 void doCase2(int argc, char* argv[]);
 void doCase3(int argc, char* argv[]);
 void doCase4(int argc, char* argv[]);
 void doCase5(int argc, char* argv[]);
-void doCase6(int argc, char* argv[]);
+void doCase6(int argc, char* argv[]);//画出一个球体，由很多个圆组成
+void doCase7(int argc, char* argv[]);//画出一个20面体，同时不显示被挡住的图像
 
 int main(int argc, char* argv[])
 {
@@ -38,6 +40,9 @@ int main(int argc, char* argv[])
 			break;
 		case 6:
 			doCase6(argc, argv);
+			break;
+		case 7:
+			doCase7(argc, argv);
 			break;
 		}
 		glutMainLoop();
@@ -123,9 +128,19 @@ void doCase6(int argc, char* argv[])
 	glutInitWindowPosition(0,0);
 	glutCreateWindow("Case 6");
 	Test_5::sharedTest_5()->init();
-
 	glutMouseFunc(Test_5::mouse);
 	glutReshapeFunc(Test_5::reshape);
 	glutDisplayFunc(Test_5::display);
 	glEnable(GL_DEPTH_TEST);
+}
+void doCase7(int argc, char*argv[])
+{
+	glutInit(&argc,argv);
+	glutInitDisplayMode(GLUT_DOUBLE|GLUT_RGB);
+	glutInitWindowSize(400,400);
+	glutInitWindowPosition(0,0);
+	glutCreateWindow("Case 7");
+	init_7();
+	glutDisplayFunc(display_7);
+	glutReshapeFunc(reshape_7);
 }

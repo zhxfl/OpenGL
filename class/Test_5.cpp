@@ -61,8 +61,6 @@ void Test_5::drawSphere(void)
 void Test_5::reshape(GLsizei ww, GLsizei hh)
 {
 	w=ww;
-
-
 	h=hh;
 	glViewport(0, 0, (GLsizei)w, (GLsizei)h);
 	glMatrixMode(GL_PROJECTION);

@@ -2,6 +2,7 @@
 @author   : zhxfl
 @date     : 2012.1.4
 @function : ����һ����
+球体，使用多个圆形交叉构成
 */
 
 #ifndef _OPENGL_CLASS_TEST_5_
